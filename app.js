@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const _ = require('lodash');
 
 
-mongoose.connect('mongodb://localhost:27017/todolistDB');
+mongoose.connect('mongodb+srv://ashish:Mongodb%400253@cluster0.c7jf3or.mongodb.net/todolistDB');
 const app = express();
 
 app.set("view engine", "ejs");
@@ -193,6 +193,6 @@ app.post('/update', (req, res)=> {
 })
 
 
-app.listen(3000, ()=> {
+app.listen(process.env.PORT || 3000, ()=> {
     console.log("Server is up and running on port 3000");
 })
